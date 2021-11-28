@@ -30,21 +30,21 @@
 {
     "__instruction__": "After configuaration, please relaunch the app.",
     "__source_list__": [
-        "pyncmd",
-        "migu",
-        "bilibili",
-        "baidu",
-        "kugou",
         "kuwo",
-        "youtube",
+        "migu",
         "qq",
+        "bilibili",
+        "kugou",
+        "pycnmd",
+        "youtube",
+        "baidu",
         "joox"
     ],
     "source": [
-        "migu",
+        "kuwo",
         "pyncmd",
         "kugou",
-        "kuwo"
+        "migu"
     ],
     "port": 16163
 }

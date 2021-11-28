@@ -1,5 +1,5 @@
 - ****  
-   - [· *cfst_ddns.sh* ***- 自动更新域名解析***](md/cfst_ddns.md)
+   - [· *解锁网易云搭建* ***- 简单***](md/jswyy/easy.md)
    - [· *cfst_hosts.sh* ***- 自动更新 Hosts***](md/cfst_hosts.md)
    - [· *lanzou_up.sh* ***- 蓝奏云上传文件***](md/lanzou_up.md)
    - [· *qb_p.sh* ***- qBittorrent 自动制作便携版***](md/qb_p.md)

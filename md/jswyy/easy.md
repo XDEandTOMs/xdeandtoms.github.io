@@ -22,7 +22,7 @@
 ![shezhi](image/shezhi.PNG)  
 点击确定然后重启即可  
 ## 进阶玩法-自定义音源
-右键通知栏Constaline/unblockneteasemusic-desktop的图标  
+右键通知栏unblockneteasemusic-desktop的图标  
 选择Configuration  
 就打开了配置文件  
 我的配置：  

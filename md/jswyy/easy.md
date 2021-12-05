@@ -5,7 +5,7 @@
 
 ## 安装
 点击下方链接下载exe可执行文件  
-[https://hub.fastgit.org/Constaline/unblockneteasemusic-desktop/releases/download/1.3.5/unblockneteasemusic-desktop-1.3.5.exe](https://hub.fastgit.org/Constaline/unblockneteasemusic-desktop/releases/download/1.3.5/unblockneteasemusic-desktop-1.3.5.exe)  
+[https://wws.lanzouo.com/iYwyHx95hji](https://wws.lanzouo.com/iYwyHx95hji)  
 下载完成后双击打开  
 ![anzhuang](image/anzhuang.PNG)  
 直接点下一步安装就行啦  

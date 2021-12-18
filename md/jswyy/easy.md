@@ -42,12 +42,13 @@
     ],
     "source": [
         "kuwo",
-        "pyncmd",
+        "migu",
         "kugou",
-        "migu"
+        "pyncmd"
     ],
     "port": 16163
 }
+
 ```  
 ```
 "port": 16163 //端口

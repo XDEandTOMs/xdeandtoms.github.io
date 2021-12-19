@@ -15,6 +15,10 @@ Github原地址:[2dust/v2rayN](https://github.com/2dust/v2rayN)
 ### Clash.Net
 <img width="160px" style="border-radius: 70%" bor src="https://xdeandtom.vercel.app/tools/images/clash.net.png"> </img>  
 作者已经删库跑路，不再更新  
-最新版1.2.8
+最新版:1.2.8
 下载[Clash.Net 密码:1234](https://wws.lanzoui.com/b00p0qxgb)  
 需要提前安装[.NET Framework 5.0 密码:4321](https://wws.lanzoui.com/b00p0qybc)  
+  
+  
+  
+持续更新中...

@@ -13,6 +13,7 @@ Github原地址:[2dust/v2rayN](https://github.com/2dust/v2rayN)
 [韩国](https://ghproxy.com/https://github.com//2dust/v2rayN/releases/download/4.20/v2rayN-Core.zip)  
   
 ### Clash.Net
+<img width="160px" style="border-radius: 70%" bor src="https://xdeandtom.vercel.app/tools/images/clash.net.png"> </img>  
 作者已经删库跑路，不再更新  
 最新版1.2.8
 下载[Clash.Net 密码:1234](https://wws.lanzoui.com/b00p0qxgb)  

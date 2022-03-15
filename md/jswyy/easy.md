@@ -5,7 +5,10 @@
 
 ## 安装
 点击下方链接下载exe可执行文件  
-[https://wws.lanzouo.com/iYwyHx95hji](https://wws.lanzouo.com/iYwyHx95hji)  
+[https://github.com/Constaline/unblockneteasemusic-desktop/releases](https://github.com/Constaline/unblockneteasemusic-desktop/releases)  
+若无法下载  
+请使用备用链接  
+[]  
 下载完成后双击打开  
 ![anzhuang](image/anzhuang.PNG)  
 直接点下一步安装就行啦  

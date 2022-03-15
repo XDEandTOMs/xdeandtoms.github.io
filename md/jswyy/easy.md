@@ -8,7 +8,7 @@
 [https://github.com/Constaline/unblockneteasemusic-desktop/releases](https://github.com/Constaline/unblockneteasemusic-desktop/releases)  
 若无法下载  
 请使用备用链接  
-[]  
+[https://cloud.xdeandtom.workers.dev/onedrive/工具/unblockneteasemusic-desktop.exe?preview](https://cloud.xdeandtom.workers.dev/onedrive/工具/unblockneteasemusic-desktop.exe?preview)
 下载完成后双击打开  
 ![anzhuang](image/anzhuang.PNG)  
 直接点下一步安装就行啦  

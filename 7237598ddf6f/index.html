@@ -14,25 +14,30 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.xdeandtom.asia","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"www.xdeandtom.asia","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="作者是sabi">
+  <meta name="description" content="知周所众 Github Pages在国内访问速度太拉垮力,经常有打不开的问题,而且Coding Pages也已经停止服务了,所以我分享了几个能够优化网站速度的方法.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="给Github Pages套CDN">
+<meta property="og:title" content="加速你的Github Pages网站">
 <meta property="og:url" content="https://www.xdeandtom.asia/7237598ddf6f/index.html">
 <meta property="og:site_name" content="TOMs的小破站~">
-<meta property="og:description" content="作者是sabi">
+<meta property="og:description" content="知周所众 Github Pages在国内访问速度太拉垮力,经常有打不开的问题,而且Coding Pages也已经停止服务了,所以我分享了几个能够优化网站速度的方法.">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.xdeandtom.asia/img/githubpagescdn1.png">
+<meta property="og:image" content="https://www.xdeandtom.asia/img/githubpagescdn2.png">
+<meta property="og:image" content="https://www.xdeandtom.asia/img/githubpagescdn3.png">
 <meta property="article:published_time" content="2023-02-09T14:29:09.000Z">
-<meta property="article:modified_time" content="2023-02-09T14:46:20.626Z">
+<meta property="article:modified_time" content="2023-02-10T10:04:56.390Z">
 <meta property="article:author" content="XDEandTOM">
 <meta property="article:tag" content="Github Pages">
 <meta property="article:tag" content="CDN">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.xdeandtom.asia/img/githubpagescdn1.png">
 
 <link rel="canonical" href="https://www.xdeandtom.asia/7237598ddf6f/">
 
@@ -47,7 +52,7 @@
   };
 </script>
 
-  <title>给Github Pages套CDN | TOMs的小破站~</title>
+  <title>加速你的Github Pages网站 | TOMs的小破站~</title>
   
 
 
@@ -171,7 +176,7 @@
     <link itemprop="mainEntityOfPage" href="https://www.xdeandtom.asia/7237598ddf6f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.xdeandto.asia/img/avatar.png">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="XDEandTOM">
       <meta itemprop="description" content="作者是sabi">
     </span>
@@ -181,7 +186,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          给Github Pages套CDN
+          加速你的Github Pages网站
         </h1>
 
         <div class="post-meta">
@@ -190,10 +195,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-02-09 22:29:09 / 修改时间：22:46:20" itemprop="dateCreated datePublished" datetime="2023-02-09T22:29:09+08:00">2023-02-09</time>
+              <time title="创建时间：2023-02-09 22:29:09" itemprop="dateCreated datePublished" datetime="2023-02-09T22:29:09+08:00">2023-02-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-02-10 18:04:56" itemprop="dateModified" datetime="2023-02-10T18:04:56+08:00">2023-02-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -215,7 +226,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p><strong>知周所众 Github Pages在国内访问速度太拉垮力,经常有打不开的问题,而且Coding Pages也已经停止服务了,所以我分享了几个能够优化网站速度的方法.</strong></p>
+<span id="more"></span>
+<h2 id="Vercel"><a href="#Vercel" class="headerlink" title="Vercel"></a>Vercel</h2><p>非常<strong>推荐</strong>这个！<br>这是一个免费的网站托管平台,而且可以关联自己的Github仓库,支持自动部署,能绑定自己的域名<br>系统默认分配的vercel.app貌似被DNS污染了<br>推荐绑定自己的域名,在DNS控制台添加一个CNAME记录:<code>cname-china.vercel-dns.com</code><br>使用的过程非常简单<br>打开<a target="_blank" rel="noopener" href="https://vercel.com/">Vercel</a>的官网<br>点击Start Deploying  再点击Continue with Github<br>接着授权就好了<br><img data-src="/img/githubpagescdn1.png" alt="Vercel"></p>
+<h2 id="Netlify"><a href="#Netlify" class="headerlink" title="Netlify"></a>Netlify</h2><p>这个跟Vercel差不多,都是能直接使用Github账号登陆的<br>官网:<a target="_blank" rel="noopener" href="https://www.netlify.com/">Netlify</a>  </p>
+<h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p>套CDN应该是最好的方法了  </p>
+<p><code>Content Delivery Network (CDN) is a system of distributed servers (network) that   delivers webpages and other web content to a user based on the geographic locations of the user, the origin of the webpage, and a content delivery server. The goal of a CDN is to serve content to end-users with high availability and high performance. A CDN works by caching content in various geographic locations close to the user so it can be delivered quickly.</code></p>
+<p><code>Content Delivery Network (CDN) 是一种网络服务，它使用分布式系统在全世界范围内缓存和提供内容以改善 Web 内容的可靠性和响应速度。CDN 通过把内容存储在服务器上来加速内容加载速度，从而将其更快地传递到客户端</code></p>
+<h3 id="开整"><a href="#开整" class="headerlink" title="开整"></a>开整</h3><p>这里使用的是腾讯云的CDN,感觉挺便宜的吧,域名如果备案了每个月能领取10G的流量,对小博客来说完全够用了<br>注册账号就不说了,<del>有手就行</del>,打开<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cdn">腾讯云CDN控制台</a><br>在左边的菜单栏选择域名管理,接着点击下方的添加域名<br><img data-src="/img/githubpagescdn2.png" alt="腾讯云控制台"><br>然后照着下方的图片填进去,域名没有备案的话,只能选择境外加速<br>加速类型可以根据自身情况选择,建议有点小钱的可以直接上ECDN<br><img data-src="/img/githubpagescdn3.png" alt="腾讯云CDN"><br>接着它会给你一个CNAME,然后域名解析一下就好了<br>SSL证书可以在<a target="_blank" rel="noopener" href="https://letsencrypt.osfipin.com/">来此加密</a>这个网站上面申请 (Let’s Encrypt的免费证书有效期只有3个月,准备到期的时候可以手动续期,也可以重新申请)<br>也可以在<a target="_blank" rel="noopener" href="https://freessl.cn/">FreeSSL</a>的网站申请  </p>
+<h2 id="CDN-Vercel"><a href="#CDN-Vercel" class="headerlink" title="CDN+Vercel"></a>CDN+Vercel</h2><p>咱也可以玩点花的<br>CDN+Vercel实现负载均衡 <del>(是这样叫吗,我也不是很懂)</del><br>也蛮简单的,在Vercel部署一下仓库,然后绑定一下自己的域名<br>比如 : <code>www.xdeandtom.asia</code><br>然后在DNS控制台添加记录<br>域名解析我使用的是<a target="_blank" rel="noopener" href="https://www.dnspod.cn/">DnsPod</a>  </p>
+<table>
+<thead>
+<tr>
+<th align="center">主机记录</th>
+<th align="center">记录类型</th>
+<th align="center">记录值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">WWW</td>
+<td align="center">CNAME</td>
+<td align="center">cname-china.vercel-dns.com.</td>
+</tr>
+<tr>
+<td align="center">WWW</td>
+<td align="center">CNAME</td>
+<td align="center">腾讯CDN分给你的CNAME</td>
+</tr>
+</tbody></table>
+<p>照着上面表格填就可以达到负载均衡的效果了<br><del>这样貌似还能加速网站的速度?我不知道,我也不晓得</del></p>
+<h2 id="CLoudflare"><a href="#CLoudflare" class="headerlink" title="CLoudflare"></a>CLoudflare</h2><p><del>负优化 别看了</del></p>
+
     </div>
 
     
@@ -296,13 +337,14 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vercel"><span class="nav-number">1.</span> <span class="nav-text">Vercel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Netlify"><span class="nav-number">2.</span> <span class="nav-text">Netlify</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CDN"><span class="nav-number">3.</span> <span class="nav-text">CDN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%95%B4"><span class="nav-number">3.1.</span> <span class="nav-text">开整</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CDN-Vercel"><span class="nav-number">4.</span> <span class="nav-text">CDN+Vercel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CLoudflare"><span class="nav-number">5.</span> <span class="nav-text">CLoudflare</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="XDEandTOM"
-      src="https://cdn.xdeandto.asia/img/avatar.png">
+      src="/images/avatar.gif">
   <p class="site-author-name" itemprop="name">XDEandTOM</p>
   <div class="site-description" itemprop="description">作者是sabi</div>
 </div>
@@ -316,12 +358,16 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
         <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">分类</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
         <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">标签</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -379,7 +425,8 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.xdeandto.asia/mediumzoom/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>

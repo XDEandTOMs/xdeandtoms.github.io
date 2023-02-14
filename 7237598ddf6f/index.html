@@ -31,8 +31,12 @@
 <meta property="og:image" content="https://www.xdeandtom.asia/img/githubpagescdn1.png">
 <meta property="og:image" content="https://www.xdeandtom.asia/img/githubpagescdn2.png">
 <meta property="og:image" content="https://www.xdeandtom.asia/img/githubpagescdn3.png">
+<meta property="og:image" content="https://www.xdeandtom.asia/img/githubpagescdn4.png">
+<meta property="og:image" content="https://www.xdeandtom.asia/img/githubpagescdn5.png">
+<meta property="og:image" content="https://www.xdeandtom.asia/img/githubpagescdn6.png">
+<meta property="og:image" content="https://www.xdeandtom.asia/img/githubpagescdn7.png">
 <meta property="article:published_time" content="2023-02-09T14:29:09.000Z">
-<meta property="article:modified_time" content="2023-02-10T12:02:14.785Z">
+<meta property="article:modified_time" content="2023-02-14T14:13:42.587Z">
 <meta property="article:author" content="XDEandTOM">
 <meta property="article:tag" content="Github Pages">
 <meta property="article:tag" content="CDN">
@@ -203,7 +207,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-02-10 20:02:14" itemprop="dateModified" datetime="2023-02-10T20:02:14+08:00">2023-02-10</time>
+                <time title="修改时间：2023-02-14 22:13:42" itemprop="dateModified" datetime="2023-02-14T22:13:42+08:00">2023-02-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,6 +261,13 @@
 </tr>
 </tbody></table>
 <p>照着上面表格填就可以达到负载均衡的效果了<br><del>这样貌似还能加速网站的速度?我不知道,我也不晓得</del></p>
+<h2 id="Github-Actions-COS-CDN"><a href="#Github-Actions-COS-CDN" class="headerlink" title="Github Actions+COS+CDN"></a>Github Actions+COS+CDN</h2><h3 id="个人感觉这个是最好的方法了"><a href="#个人感觉这个是最好的方法了" class="headerlink" title="个人感觉这个是最好的方法了"></a>个人感觉这个是最好的方法了</h3><h3 id="创建COS"><a href="#创建COS" class="headerlink" title="创建COS"></a>创建COS</h3><p>进入<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cos">COS控制台</a> 选择新建储存桶<br>地区可以选择离自己近点的地方 (没有备案推荐选香港)<br>访问权限选择公有读私有写<br><img data-src="/img/githubpagescdn4.png" alt="腾讯COS"><br>在左边的菜单找到基础配置 接着点击静态网站<br>把静态网站打开就行了 (推荐打开强制HTTPS)<br><img data-src="/img/githubpagescdn5.png" alt="腾讯COS">  </p>
+<h3 id="添加CDN"><a href="#添加CDN" class="headerlink" title="添加CDN"></a>添加CDN</h3><p>接着打开<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cdn">腾讯云CDN控制台</a> 新建一个域名<br>步骤就和<a href="#%E5%BC%80%E6%95%B4">这里</a> 差不多 就不讲了 直接跳到源站配置<br>跟着下面选就好了 然后保存就行了 (注意添加访问权限)<br><img data-src="/img/githubpagescdn6.png" alt="腾讯COS">  </p>
+<h3 id="添加密钥"><a href="#添加密钥" class="headerlink" title="添加密钥"></a>添加密钥</h3><p>这里要在添加腾讯云账号的API密钥<br>可以在<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cam/capi">API密钥管理</a> 获取<br>打开Github仓库的Settings 找到Actions secrets and variables<br>然后点击New repository secret<br>分别添加<code>SECRET_ID</code>和<code>SECRET_KEY</code><br><img data-src="/img/githubpagescdn7.png" alt="API">  </p>
+<h3 id="新建Workflows"><a href="#新建Workflows" class="headerlink" title="新建Workflows"></a>新建Workflows</h3><p>在Actions中选择New workflows 然后选择set up a workflow yourself<br>这时候就会自动新建一个空白的文件 然后把下面的代码复制进去就好了  </p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">name: Upload to COS</span><br><span class="line"></span><br><span class="line">on: [push]</span><br><span class="line"></span><br><span class="line">jobs:</span><br><span class="line">  build:</span><br><span class="line"></span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line"></span><br><span class="line">    steps:</span><br><span class="line">    - uses: actions/checkout@v1</span><br><span class="line">    - name: Install coscmd</span><br><span class="line">      run: sudo pip install coscmd</span><br><span class="line">    - name: Configure coscmd</span><br><span class="line">      env:</span><br><span class="line">        SECRET_ID: $&#123;&#123; secrets.SecretId &#125;&#125;</span><br><span class="line">        SECRET_KEY: $&#123;&#123; secrets.SecretKey &#125;&#125;</span><br><span class="line">        BUCKET: 储存桶的名称</span><br><span class="line">        REGION: 储存桶的地区 比如ap-guangzhou</span><br><span class="line">      run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION</span><br><span class="line">    - name: Upload</span><br><span class="line">      run: coscmd upload -rs --delete -f ./ / --ignore &quot;./.git/*&quot;</span><br></pre></td></tr></table></figure>
+
+<p>然后点击右上角绿色的按钮就能保存了<br>然后每次更新仓库都会自动上传到COS里面了</p>
 <h2 id="CLoudflare"><a href="#CLoudflare" class="headerlink" title="CLoudflare"></a>CLoudflare</h2><p><del>负优化 别看了</del></p>
 
     </div>
@@ -339,7 +350,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vercel"><span class="nav-number">1.</span> <span class="nav-text">Vercel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Netlify"><span class="nav-number">2.</span> <span class="nav-text">Netlify</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CDN"><span class="nav-number">3.</span> <span class="nav-text">CDN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%95%B4"><span class="nav-number">3.1.</span> <span class="nav-text">开整</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CDN-Vercel"><span class="nav-number">4.</span> <span class="nav-text">CDN+Vercel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CLoudflare"><span class="nav-number">5.</span> <span class="nav-text">CLoudflare</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vercel"><span class="nav-number">1.</span> <span class="nav-text">Vercel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Netlify"><span class="nav-number">2.</span> <span class="nav-text">Netlify</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CDN"><span class="nav-number">3.</span> <span class="nav-text">CDN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%95%B4"><span class="nav-number">3.1.</span> <span class="nav-text">开整</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CDN-Vercel"><span class="nav-number">4.</span> <span class="nav-text">CDN+Vercel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Github-Actions-COS-CDN"><span class="nav-number">5.</span> <span class="nav-text">Github Actions+COS+CDN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E6%84%9F%E8%A7%89%E8%BF%99%E4%B8%AA%E6%98%AF%E6%9C%80%E5%A5%BD%E7%9A%84%E6%96%B9%E6%B3%95%E4%BA%86"><span class="nav-number">5.1.</span> <span class="nav-text">个人感觉这个是最好的方法了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BACOS"><span class="nav-number">5.2.</span> <span class="nav-text">创建COS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0CDN"><span class="nav-number">5.3.</span> <span class="nav-text">添加CDN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%AF%86%E9%92%A5"><span class="nav-number">5.4.</span> <span class="nav-text">添加密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BAWorkflows"><span class="nav-number">5.5.</span> <span class="nav-text">新建Workflows</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CLoudflare"><span class="nav-number">6.</span> <span class="nav-text">CLoudflare</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

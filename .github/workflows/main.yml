@@ -1,22 +1,16 @@
-name: Upload to COS
-
-on: [push]
-
+on: push
+name: 🚀 Deploy website on push
 jobs:
-  build:
-
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Install coscmd
-      run: sudo pip install coscmd
-    - name: Configure coscmd
-      env:
-        SECRET_ID: ${{ secrets.TCLOUD_API_ID }}
-        SECRET_KEY: ${{ secrets.TCLOUD_API_KEY }}
-        BUCKET: ${{ secrets.TCLOUD_BUCKET }}
-        REGION: ap-hongkong
-      run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
-    - name: Upload
-      run: coscmd upload -rfs --delete ./ / --ignore "./.git/*"
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ${{ secrets.ftp_server }}
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
